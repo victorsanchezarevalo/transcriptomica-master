@@ -6,7 +6,7 @@ Material docente del **módulo de Transcriptómica**: prácticas, datos y script
 
 | # | Práctica | Descripción | Abrir |
 |---|----------|-------------|-------|
-| 1 | [Microarrays LLA](practicas/01-microarrays-lla/) | Expresión diferencial **BCR/ABL vs NEG** en Leucemia Linfoide Aguda con limma (InMoose) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb) |
+| 1 | [Microarrays LLA](practicas/01-microarrays-lla/) | Expresión diferencial **BCR/ABL vs NEG** en Leucemia Linfoide Aguda con limma (InMoose) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victor.sanchezarevalo/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb) |
 
 > ⚠️ **Profesorado:** tras crear el repositorio, sustituye `TU_USUARIO` por tu nombre de
 > usuario de GitHub en este README y en la celda 2 del notebook (busca `TU_USUARIO`).
