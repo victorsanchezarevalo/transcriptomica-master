@@ -1,6 +1,6 @@
 # Práctica 1 — Análisis de expresión diferencial con microarrays: BCR/ABL vs NEG en LLA
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb)
 
 ## Objetivo principal
 
@@ -24,7 +24,8 @@ usando **limma** en **InMoose**.
 Dataset público `ALL` (Chiaretti et al., 2004, *Blood* — paquete `ALL` de Bioconductor),
 plataforma Affymetrix HG-U95Av2:
 
-- `datos/exprs.csv` — matriz de expresión: 12 625 sondas × 128 muestras.
+- `datos/exprs.csv.gz` — matriz de expresión comprimida: 12 625 sondas × 128 muestras
+  (pandas la lee directamente; para usarla con Excel u otras herramientas, descomprímela).
 - `datos/pData.csv` — metadatos: subtipo molecular (`mol.biol`), datos clínicos y citogenéticos.
 - Comparación de la práctica: **74 muestras NEG vs 37 BCR/ABL** (111 muestras).
 
