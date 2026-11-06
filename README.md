@@ -1,66 +1,56 @@
-# Práctica 1 — Análisis de expresión diferencial con microarrays: BCR/ABL vs NEG en LLA
+# Transcriptómica — Máster en Bioinformática
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb)
+Material docente del **módulo de Transcriptómica**: prácticas, datos y scripts de análisis.
 
-## Objetivo principal
+## Prácticas
 
-Identificar el perfil de expresión génica diferencial entre los subtipos moleculares
-**BCR/ABL** y **NEG** en Leucemia Linfoide Aguda mediante análisis de microarrays
-usando **limma** en **InMoose**.
+| # | Práctica | Descripción | Abrir |
+|---|----------|-------------|-------|
+| 1 | [Microarrays LLA](practicas/01-microarrays-lla/) | Expresión diferencial **BCR/ABL vs NEG** en Leucemia Linfoide Aguda con limma (InMoose) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/01-microarrays-lla/Analisis_microarrays_LLA_Colab.ipynb) |
+| 2 | [RNA-seq UPF1](practicas/02-rnaseq-upf1/) | QC, alineamiento con **STAR**, cuantificación con **featureCounts** y pseudoalineamiento con **Salmon** + pymportx (GSE81214, UPF1 en hESCs) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/02-rnaseq-upf1/RNAseq_UPF1_Colab.ipynb) |
+| 3 | [PyDESeq2 y PCA](practicas/03-rnaseq-pydeseq2/) | Expresión diferencial con **PyDESeq2** y **PCA** sobre VST: validación del knockdown de UPF1 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/03-rnaseq-pydeseq2/RNAseq_PyDESeq2_Colab.ipynb) |
 
-## Objetivos específicos
+## Cómo usar este material (estudiantes)
 
-- **Análisis diferencial:** detectar genes significativos (FDR < 0.05, |log2FC| > 0.5),
-  clasificarlos en sobre- e infra-expresados y priorizar candidatos.
-- **Control de calidad estadística:** corrección de Benjamini-Hochberg, suavizado
-  bayesiano empírico (eBayes) y detección robusta de columnas.
-- **Visualización:** volcano plot, MA plot y heatmaps con clustering.
-- **Reproducibilidad:** pipeline automatizado de código abierto, exportación en CSV.
-- **Preparación posterior:** conjuntos de genes UP/DOWN para análisis de enriquecimiento
-  funcional y estudios de firma génica.
+1. Pulsa el botón **Open in Colab** de la práctica.
+2. En Colab: **Entorno de ejecución → Ejecutar todas**.
+3. La primera celda instala el paquete `inmoose` y **puede tardar entre 5 y 10 minutos**
+   (se compila desde el código fuente). Es normal: espera a que aparezca el mensaje de
+   confirmación.
+4. Los datos se descargan automáticamente desde este repositorio; no necesitas subir
+   ningún archivo.
+5. Al final del notebook se genera un ZIP con todos los resultados (CSV + figuras) que
+   se descarga a tu ordenador. **Guárdalo**: Colab borra los archivos al cerrar la sesión.
 
-## Datos
+## Ejecución en local (opcional)
 
-Dataset público `ALL` (Chiaretti et al., 2004, *Blood* — paquete `ALL` de Bioconductor),
-plataforma Affymetrix HG-U95Av2:
-
-- `datos/exprs.csv.gz` — matriz de expresión comprimida: 12 625 sondas × 128 muestras
-  (pandas la lee directamente; para usarla con Excel u otras herramientas, descomprímela).
-- `datos/pData.csv` — metadatos: subtipo molecular (`mol.biol`), datos clínicos y citogenéticos.
-- Comparación de la práctica: **74 muestras NEG vs 37 BCR/ABL** (111 muestras).
-
-## Contenido
-
-| Archivo | Descripción |
-|---|---|
-| `Analisis_microarrays_LLA_Colab.ipynb` | Notebook completo para Google Colab (recomendado) |
-| `Limma_inmoose.py` | Mismo análisis como script con celdas `# %%` para Spyder |
-| `inmoose_env.yaml` | Entorno conda para ejecución local |
-| `datos/` | Datos de expresión y metadatos |
-
-## Resultados esperados
-
-Con los umbrales por defecto (FDR < 0.05 y |log2FC| > 0.5) deberías obtener
-aproximadamente **760 genes con FDR significativo**, de los cuales unos **270
-sobre-expresados** y **65 infra-expresados** superan también el umbral de fold change.
-Pequeñas variaciones son normales según la versión de inmoose.
-
-## Instrucciones
-
-### Opción A — Google Colab (recomendada)
-
-1. Abre el notebook con el botón **Open in Colab** de arriba.
-2. **Entorno de ejecución → Ejecutar todas**.
-3. La celda de instalación de `inmoose` tarda 5-10 minutos la primera vez.
-4. Descarga el ZIP de resultados al final.
-
-### Opción B — Local con conda (Spyder)
+Si prefieres trabajar en tu equipo (Spyder, Jupyter…), cada práctica incluye un entorno
+conda listo para usar:
 
 ```bash
-conda env create -f inmoose_env.yaml
+conda env create -f practicas/01-microarrays-lla/inmoose_env.yaml
 conda activate inmoose_env
-spyder
 ```
 
-Abre `Limma_inmoose.py`, ajusta las rutas de `expr_path` y `pdata_path` a la carpeta
-`datos/` y ejecuta por celdas (`# %%`).
+## Estructura del repositorio
+
+```
+transcriptomica-master/
+├── README.md                  ← este archivo
+└── practicas/
+    └── 01-microarrays-lla/
+        ├── README.md          ← guía de la práctica
+        ├── Analisis_microarrays_LLA_Colab.ipynb
+        ├── Limma_inmoose.py   ← versión script (Spyder)
+        ├── inmoose_env.yaml   ← entorno conda
+        └── datos/
+            ├── exprs.csv.gz   ← matriz de expresión comprimida (12 625 sondas × 128 muestras)
+            └── pData.csv      ← metadatos clínicos y subtipos moleculares
+```
+
+## Licencia
+
+Material docente con fines educativos. Se recomienda distribuir bajo licencia
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es).
+Los datos de expresión proceden del dataset público `ALL` de Bioconductor
+(Chiaretti et al., 2004, *Blood*), plataforma Affymetrix HG-U95Av2.
