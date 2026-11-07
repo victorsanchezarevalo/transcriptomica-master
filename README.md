@@ -1,4 +1,5 @@
-# Transcriptómica — Máster en Bioinformática Universidad Francisco de Vitoria
+# Transcriptómica — Máster en Bioinformática
+## Universidad Francisco de Vitoria
 
 Material docente del **módulo de Transcriptómica**: prácticas, datos y scripts de análisis.
 
