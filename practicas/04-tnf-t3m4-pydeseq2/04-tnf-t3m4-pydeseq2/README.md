@@ -2,7 +2,7 @@
 
 **Máster en Bioinformática — Módulo de Transcriptómica**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/04-tnf-t3m4-pydeseq2/TNF_T3M4_PyDESeq2_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/04-tnf-t3m4-pydeseq2/04-tnf-t3m4-pydeseq2/TNF_T3M4_PyDESeq2_Colab.ipynb)
 
 ## Objetivo
 
