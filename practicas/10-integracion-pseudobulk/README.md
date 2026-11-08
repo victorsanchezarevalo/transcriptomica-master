@@ -2,7 +2,7 @@
 
 **Máster en Bioinformática — Módulo de Transcriptómica**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/10-integracion-pseudobulk/Integracion_Pseudobulk_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/victorsanchezarevalo/transcriptomica-master/blob/main/practicas/10-integracion-pseudobulk/Integracion_Pseudobulk_Colab_final.ipynb)
 
 Segunda sesión de célula única. Se analiza el dataset de **Kang et al. 2018** (GSE96583): PBMC de **8 donantes** multiplexados genéticamente, cultivados 6 h sin (`ctrl`) o con interferón-β (`stim`). La asignación célula → donante (demuxlet) y la anotación de tipos celulares se toman de los metadatos de los autores.
 
